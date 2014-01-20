@@ -7,11 +7,11 @@
 			<field name="inherit_id" ref="product.product_normal_form_view"/>
 			<field name="arch" type="xml">
 				<data>
-					<field name="sale_delay" position="after">
+					<page string="Sales" position="inside">
 						<group string="Spree Commerce">
 							<field name="waiting_spree_import"/>
 						</group>
-					</field>
+					</page>
 				</data>
 			</field>
 		</record>
