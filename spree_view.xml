@@ -1,17 +1,18 @@
 <?xml version="1.0"?>
 <openerp>
 	<data>
-
-		<record model="ir.ui.view" id="product_normal_form_view_extension">
-			<field name="name">product.normal.form.inherit</field>
+		<record model="ir.ui.view" id="product_normal_form_spree_extension">
+			<field name="name">product.normal.form.spree</field>
 			<field name="model">product.product</field>
 			<field name="inherit_id" ref="product.product_normal_form_view"/>
 			<field name="arch" type="xml">
-					<page string="Sales" position="inside">
+				<data>
+					<field name="sale_delay" position="after">
 						<group string="Spree Commerce">
 							<field name="waiting_spree_import"/>
 						</group>
-					</page>
+					</field>
+				</data>
 			</field>
 		</record>
 
