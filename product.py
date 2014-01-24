@@ -5,6 +5,9 @@ class spree_product(osv.osv):
     _name="product.product"
     _inherit="product.product"
     
+    def _get_default_code(self, cr, uid, ids, context=None):
+        return self.pool.get('product.product').read(cr, uid, ids, ['default_code'])['default_code']
+        
     _columns = {
         'waiting_spree_import': fields.boolean('Waiting spree import', required=False),
         'permalink': fields.char('Spree permalink', required=False)
@@ -12,7 +15,7 @@ class spree_product(osv.osv):
     
     _defaults = {
         'waiting_spree_import': True,
-        'permalink': lambda s,cr,uid,c: s.pool.get('product.product').browse(cr, uid, s.read(cr, uid, ['id'])['id'], context=c).default_code
+        'permalink': lambda s,cr,uid,ids,c: s._get_default_code(cr, uid, ids, context=c)
     }
 
 spree_product()
