@@ -7,7 +7,7 @@ class spree_product(osv.osv):
     
     _columns = {
         'waiting_spree_import': fields.boolean('Waiting spree import', required=False),
-        'permalink': fields.boolean('Spree permalink', required=False)
+        'permalink': fields.char('Spree permalink', required=False)
     }
     
     _defaults = {
