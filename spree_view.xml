@@ -10,6 +10,7 @@
 					<page string="Sales" position="inside">
 						<group string="Spree Commerce">
 							<field name="waiting_spree_import"/>
+							<field name="permalink" />
 						</group>
 					</page>
 				</data>

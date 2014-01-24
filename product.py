@@ -7,10 +7,12 @@ class spree_product(osv.osv):
     
     _columns = {
         'waiting_spree_import': fields.boolean('Waiting spree import', required=False),
+        'permalink': fields.boolean('Spree permalink', required=False)
     }
     
     _defaults = {
         'waiting_spree_import': True,
+        'permalink': lambda s,cr,uid,c: s.pool.get('product.product').browse(cr, uid, c['active_id'], context=c).default_code
     }
 
 spree_product()
