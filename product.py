@@ -12,7 +12,7 @@ class spree_product(osv.osv):
     
     _defaults = {
         'waiting_spree_import': True,
-        'permalink': lambda s,cr,uid,c: s.pool.get('product.product').browse(cr, uid, s.id, context=c).default_code
+        'permalink': lambda s,cr,uid,c: s.pool.get('product.product').browse(cr, uid, s.read(cr, uid, ['id'])['id'], context=c).default_code
     }
 
 spree_product()
