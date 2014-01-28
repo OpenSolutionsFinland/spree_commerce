@@ -23,8 +23,8 @@ spree_product()
 
 
 class spree_stock_picking(osv.osv):
-    _name="stock.picking.out"
-    _inherit="stock.picking.out"
+    _name="stock.picking"
+    _inherit="stock.picking"
     
     _columns = {
         'shipment_reported_spree': fields.boolean('Shipment reported to Spree', required=False),
